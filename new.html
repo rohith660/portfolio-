@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(0 83% 17%);
+            overflow-x: hidden; /* Prevent horizontal scroll caused by floating shapes */
+            position: relative; /* Needed for absolute positioning of floating shapes */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #0253064d;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6a00;
+            transform: scale(1.1);
+        }
+
+        .work-with-me-btn {
+            background-color: #ff6a00;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            position: relative;
+            margin-right: 200px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .hero2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 100px;
+        }
+
+        .hero-content2 h1 {
+            font-size: 48px;
+            font-weight: bold;
+            position: relative;
+            margin-right: 440px;
+            color: #333;
+            text-align: right;
+        }
+
+        .hero-content2 p {
+            font-size: 16px;
+            position: relative;
+            margin-left: 100px;
+            color: #666;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .portfolio-btn {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-btn2 {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            position: relative;
+            margin-left: 100px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-btn:hover, .portfolio-btn2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image, .hero-image2 {
+            position: relative;
+        }
+
+        .greta-image {
+            width: 600px;
+            height: auto;
+            box-shadow: 0px 10px 20px rgba(135, 234, 254, 0.612);
+            object-fit: cover;
+            border-radius: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .greta-image2, .greta-image3 {
+            width: 600px;
+            height: 600px;
+            box-shadow: 0px 10px 20px rgba(135, 234, 254, 0.612);
+            object-fit: cover;
+            border-radius: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .greta-image:hover, .greta-image2:hover, .greta-image3:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .curve {
+            position: static;
+            background-color: #004d3d;
+            height: 130px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+            width: 40%;
+            margin-top: -10px;
+        }
+
+        .curveright {
+            position: relative;
+            float: right;
+            background-color: #004d3d;
+            height: 130px;
+            border-bottom-left-radius: 50px;
+            border-top-left-radius: 50px;
+            width: 80%;
+            margin-top: -10px;
+        }
+
+        /* Floating Shapes Animation */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background-color: rgba(255, 106, 0, 0.3);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .shape.square {
+            background-color: rgba(66, 134, 244, 0.3);
+            border-radius: 0;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid rgba(255, 255, 255, 0.3);
+            background-color: transparent;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            left: 30%;
+            animation-duration: 10s;
+        }
+
+        .shape.square:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            animation-duration: 12s;
+        }
+
+        .shape.triangle:nth-child(4) {
+            top: 70%;
+            left: 70%;
+            animation-duration: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <span class="logo-text">Welcome to Rohith's Portfolio.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="resumee.html">Resume</a></li>
+                <li><a href="#">Porfile</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="#">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About Rohith.K.S</h1>
+                <p>I’m Rohith K.S, a Computer Science Engineering student at Saveetha School of Engineering, passionate about data science, AI, and frontend development. My projects range from developing a 6-page web application for college event organization to a deep learning analysis for medical imaging. I've authored four research papers and completed multiple capstone projects. As a freelancer, I specialize in video editing, delivering high-quality work for international clients. Always eager to learn and innovate, I aim to make an impact in the tech industry.</p>
+                <a href="resumee.html" class="portfolio-btn" >My Resume</a>
+            </div>
+            <div class="hero-image" >
+                <img src="greta-image.jpg" alt="Greta Mae Evans" class="greta-image">
+            </div>
+        </section>
+    </main>
+
+    <div class="curve"></div>
+    
+    <main>
+        <section class="hero2">
+            <div class="hero-image2">
+                <img src="greta-image3.png" alt="Greta Mae Evans" class="greta-image3">
+            </div>
+            <div class="hero-content2">
+                <h1>Projects </h1>
+                <p>Projects & Tools Overview:
+                    I am proficient in various programming languages including Python, Java, and C++. My notable project involved a cardiovascular analysis utilizing ResNet18 and AlexNet deep learning algorithms to enhance patient outcomes in medical imaging. I implemented tools such as TensorFlow and Keras for model training and evaluation. Additionally, I developed a 6-page web application for organizing college events using HTML, CSS, and PHP. I have authored four research papers focusing on data science and AI topics. As a freelancer, I specialize in video editing, delivering high-quality work for international clients.</p>
+                <a href="project.html" class="portfolio-btn2">Click Button</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="curve"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Freelancer</h1>
+                <p>As a freelance video editor, I specialize in creating engaging and high-quality video content for various clients. I utilize industry-standard software to enhance visuals and audio, ensuring a polished final product. My expertise includes cutting, transitions, color correction, and audio balancing, tailored to meet the specific needs of each project. I have successfully delivered projects ranging from promotional videos to personal milestones, always aiming for creative storytelling. My commitment to excellence and attention to detail helps bring clients' visions to life.</p>
+                <a href="edits.html" class="portfolio-btn">Click Button</a>
+            </div>
+            <div class="hero-image">
+                <img src="greta-image2.jpg" alt="Greta Mae Evans" class="greta-image2">
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

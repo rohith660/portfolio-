@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(0 83% 17%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #0253064d;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6a00;
+            transform: scale(1.1);
+        }
+
+        /* Main section for centered content */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; /* Full height of the viewport */
+            text-align: center; /* Center text horizontally */
+        }
+
+        .hero-content2 h1 {
+            font-size: 48px;
+            margin-top: 1150px; /* Add space below the image */
+            font-weight: bold;
+            color: #003f15;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        .hero-image2 img {
+            width: 1050px;
+            height: 1400px;
+            margin-bottom: 20px; /* Add space below the image */
+            margin-top: 5px; /* Add space below the image */
+            border-radius: 5%; /* Makes the image round */
+            box-shadow: 0px 10px 20px rgba(254, 135, 222, 0.636);
+        }
+
+        .hero-content2 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            margin-top: 30px; /* Add space below the image */
+            margin-left: 140px; /* Add space below the image */
+            width: 80%; /* Constrain paragraph width */
+            max-width: 800px; /* Maximum width of the paragraph */
+        }
+
+        .portfolio-btn2 {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-btn2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <span class="logo-text">Welcome to Rohith's Portfolio.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="new.html">Profile</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="https://drive.google.com/drive/u/4/my-drive">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-content2">
+            <h1>Resume</h1>
+            <div class="hero-image2">
+                <img src="resumephoto.png" alt="Greta Mae Evans">
+            </div>
+            <p>
+                I am a Computer Science Engineering student with a strong foundation in data science, artificial intelligence, and frontend development. My experience includes working on a cardiovascular project utilizing deep learning algorithms like ResNet18 and AlexNet, and developing a 6-page web application for college event management using HTML, CSS, and PHP. I’ve authored four research papers and completed multiple capstone projects. Additionally, I work as a freelance video editor, providing professional services to international clients.
+            </p><p><h6>You can view my Google Drive link to explore the projects and college work I've completed:</h6><h4>  ⬇️[View My Work] ⬇️</h4></p>
+            <a href="https://drive.google.com/drive/u/4/my-drive" class="portfolio-btn2">Click Button</a>
+        </div>
+    </main>
+
+</body>
+</html>

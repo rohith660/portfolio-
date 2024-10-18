@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(178 64% 2% / 0.641);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #0253064d;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6a00;
+            transform: scale(1.1);
+        }
+
+        /* Main section for centered content */
+                /* Floating Circles Animation */
+                .floating-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100vh; /* Cover full height of the viewport */
+            overflow: hidden; /* Prevents overflow */
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgba(255, 106, 0, 0.3); /* Semi-transparent orange */
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%; /* Adjust for initial vertical position */
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 30%; /* Adjust for initial vertical position */
+            left: 30%;
+            animation-duration: 10s;
+        }
+
+        .circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 50%; /* Adjust for initial vertical position */
+            left: 70%;
+            animation-duration: 12s;
+        }
+
+        .circle:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 70%; /* Adjust for initial vertical position */
+            left: 50%;
+            animation-duration: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; /* Full height of the viewport */
+            text-align: center; /* Center text horizontally */
+        }
+
+        .hero-content2 h1 {
+            font-size: 48px;
+            margin-top: 370px; /* Add space below the image */
+            font-weight: bold;
+            color: #3f1500e8;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        .hero-image2 img {
+            width: 1050px;
+            height: 600px;
+            margin-bottom: 20px; /* Add space below the image */
+            margin-top: 5px; /* Add space below the image */
+            border-radius: 5%; /* Makes the image round */
+            box-shadow: 0px 10px 20px rgba(101, 101, 250, 0.46);
+        }
+
+        .hero-content2 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 100px; /* Add space below the paragraph */
+            margin-top: 30px; /* Add space below the image */
+            margin-left: 140px; /* Add space below the image */
+            width: 80%; /* Constrain paragraph width */
+            max-width: 800px; /* Maximum width of the paragraph */
+        }
+
+        .portfolio-btn2 {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hero-image3 img {
+            width: 1050px;
+            height: 600px;
+            margin-bottom: 20px; /* Add space below the image */
+            margin-top: 115px; /* Add space below the image */
+            border-radius: 5%; /* Makes the image round */
+            box-shadow: 0px 10px 20px rgba(101, 101, 250, 0.46);
+        }
+
+        .hero-content3 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            margin-top: 30px; /* Add space below the image */
+            margin-left: 140px; /* Add space below the image */
+            width: 80%; /* Constrain paragraph width */
+            max-width: 800px; /* Maximum width of the paragraph */
+            
+        }
+        .hero-content3 h1 {
+            font-size: 48px;
+            margin-top: 330px; /* Add space below the image */
+            font-weight: bold;
+            margin-bottom: 370px; /* Add space below the image */
+            color: #3f1500e8;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+        .hero-image4 img {
+            width: 1050px;
+            height: 600px;
+            margin-bottom: 20px; /* Add space below the image */
+            margin-top: 580px; /* Add space below the image */
+            border-radius: 5%; /* Makes the image round */
+            box-shadow: 0px 10px 20px rgba(101, 101, 250, 0.46);
+        }
+
+        .hero-content4 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            margin-top: 30px; /* Add space below the image */
+            margin-left: 140px; /* Add space below the image */
+            width: 80%; /* Constrain paragraph width */
+            max-width: 800px; /* Maximum width of the paragraph */
+            
+        }
+        .hero-content4 h1 {
+            font-size: 48px;
+            margin-top: 370px; /* Add space below the image */
+            margin-top: 330px; /* Add space below the image */
+            font-weight: bold;
+            color: #3f1500e8;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+
+        .portfolio-btn2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+         /* Hover effect for images */
+        .edit1:hover,
+        .edit2:hover,
+        .edit4:hover {
+            transform: scale(1.05); /* Enlarge image slightly */
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Adds a stronger shadow on hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="floating-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <span class="logo-text">Welcome to Rohith's Portfolio.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="new.html">Profile</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="https://drive.google.com/drive/u/3/home">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-content2">
+            <h1>Editing Work</h1>
+            <div class="hero-image2">
+                <img src="edit1.png" alt="Greta Mae Evans" class="edit1">
+            </div>
+            <p>
+                <h2> ( Short Filims , Reels , Shorts & Project Presentation )</h2>
+            </p>
+        </div>
+    </main>
+    <main>
+        <div class="hero-content3">
+            <h1></h1>
+            <div class="hero-image3">
+                <img src="edit2.png" alt="Greta Mae Evans" class="edit2">
+            </div>
+            <p>
+                <h2></h2></p>
+            <a href="https://drive.google.com/drive/u/4/my-drive" class="portfolio-btn2">Click Button</a>
+        </div>
+    </main>
+    <main>
+        <div class="hero-content3">
+            <h1></h1>
+            <div class="hero-image3">
+                <img src="edit4.png" alt="Greta Mae Evans" class="edit4">
+            </div>
+            <p>
+                <h3>Freelance video editing services to international clients, focusing on creating visually engaging and high-quality content. My expertise includes editing video presentations, applying effects, and ensuring smooth transitions. I tailor my work to each client's unique needs, delivering polished and professional results.
+                </h3></p><p><h6>You can view my Google Drive link to explore the projects and college work I've completed:</h6><h4>  ⬇️[View My Work] ⬇️</h4></p>
+            <a href="https://drive.google.com/drive/u/3/home" class="portfolio-btn2">Click Button</a>
+        </div>
+    </main>
+    
+
+</body>
+</html>

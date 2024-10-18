@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(258 84% 0% / 0.416);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #02530668;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6a00;
+            transform: scale(1.1);
+        }        /* Floating Circles Animation */
+        .floating-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100vh; /* Cover full height of the viewport */
+            overflow: hidden; /* Prevents overflow */
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgba(255, 106, 0, 0.3); /* Semi-transparent orange */
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%; /* Adjust for initial vertical position */
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 30%; /* Adjust for initial vertical position */
+            left: 30%;
+            animation-duration: 10s;
+        }
+
+        .circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 50%; /* Adjust for initial vertical position */
+            left: 70%;
+            animation-duration: 12s;
+        }
+
+        .circle:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 70%; /* Adjust for initial vertical position */
+            left: 50%;
+            animation-duration: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+
+        /* Main section for centered content */
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image2 {
+            position: relative;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 100px;
+            position: relative;
+            z-index: 1; /* Ensure hero is above circles */
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-right: 200px; /* Add space below the paragraph */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            position: relative;
+            margin-right: 200px; /* Adjust the value as needed for desired spacing */
+            color: #666;
+            margin-top: 10px;
+        }
+        .image-container {
+                margin-top: 10px; /* Add space below the image */
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .image-container img {
+                margin-top: 10px; /* Add space below the image */
+                width: 270px; /* Adjust the width as needed */
+                height: auto;
+            }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; /* Full height of the viewport */
+            text-align: center; /* Center text horizontally */
+        }
+
+        .hero-content2 h1 {
+            font-size: 48px;
+            margin-top: 1150px; /* Add space below the image */
+            font-weight: bold;
+            color: #003f15;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        .hero-image2 img {
+            margin-bottom: 20px; /* Add space below the image */
+            margin-top: 20px; /* Add space below the image */
+            border-radius: 5%; /* Makes the image round */
+            box-shadow: 0px 10px 20px rgba(0, 107, 18, 0.523);
+        }
+
+        .hero-content2 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            margin-top: 100px; /* Add space below the image */
+            margin-left: 140px; /* Add space below the image */
+            width: 80%; /* Constrain paragraph width */
+            max-width: 800px; /* Maximum width of the paragraph */
+        }
+
+        .portfolio-btn2 {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            margin-bottom: 50px; /* Add space below the paragraph */
+            margin-top: 10px; /* Add space below the image */
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-btn2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Hover effect for images */
+        .poster1:hover,
+        .poster2:hover,
+        .poster3:hover,
+        .poster4:hover,
+        .greta-image {
+            transform: scale(1.05); /* Enlarge image slightly */
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Adds a stronger shadow on hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+        .greta-image {
+            width: 600px; /* Adjust width as needed */
+            height: auto; /* Keeps the aspect ratio intact */
+            box-shadow: 0px 10px 20px rgba(135, 234, 254, 0.612);
+            object-fit: cover;
+            border-radius: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+        .portfolio-btn {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+        .portfolio-btn2 {
+            background-color: #ff6a00;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(249, 184, 4, 0.366);
+            padding: 15px 25px;
+            position: relative;
+            margin-left: 100px; /* Adjust the value as needed for desired spacing */
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+
+        /* Hover effect for Portfolio button */
+        .portfolio-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+        .portfolio-btn2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <span class="logo-text">Welcome to Rohith's Portfolio.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="new.html">Profile</a></li>
+                <li><a href="resumee.html">Resume</a></li>
+                <li><a href="https://drive.google.com/drive/u/4/my-drive">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <div class="floating-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <center>
+        <div class="hero-image2" class="hero-content2">
+            <h1>PROJECTS </h1><h3>Cardiovascular Analysis Using Deep Learning </h3>
+        <div class="image-container" class="hero-image" >
+            <img style="border-radius: 3.5%;" src="poster1.png" alt="p1" class="poster1">
+            <img style="border-radius: 3.5%;" src="poster2.png" alt="p2" class="poster2">
+            <img style="border-radius: 3.5%;" src="poster3.png" alt="p3" class="poster3">
+            <img style="border-radius: 3.5%;" src="poster4.png" alt="p4" class="poster4">
+        </div>
+        </div>
+        
+        <div>
+        <p>
+            Angioplasty Project Overview
+            This project aimed to enhance cardiovascular analysis by utilizing cutting-edge deep learning algorithms like ResNet18 and AlexNet to improve the accuracy and precision of rotational atherectomy angioplasty procedures. Angioplasty, being a minimally invasive technique, requires detailed imaging analysis to ensure successful treatment of arterial blockages. By integrating TensorFlow and Keras, I trained models to predict and classify medical imaging data, helping physicians make more informed decisions. The project focused on optimizing patient outcomes through the advanced predictive capabilities of deep learning and high-quality data analysis.
+            
+            Tools & Technologies:
+            
+            ResNet18 and AlexNet (Deep Learning Algorithms)
+            TensorFlow and Keras (Model training and evaluation)
+            Python (Programming language)
+            Medical Imaging Datasets (For training and testing models)</h6><br><h4>  ⬇️[View My Work]  scroll down⬇️</h4></p>
+</div>
+<main>
+    <section class="hero">
+    <div class="hero-content">
+        <h1>Web Application</h1>
+        <p>
+            Web Application Project Overview
+I developed a 6-page web application designed to streamline the process of college event organization by providing an intuitive platform for managing event details and registrations. The application features a fully functional login and registration system, allowing users to create accounts and register for events easily. Built with HTML, CSS, and PHP, the project integrates seamless frontend design with robust backend functionalities to enhance user experience. By incorporating MySQL as the database management system, the application ensures secure and efficient handling of user data, including participant registrations and event information.
+
+Tools & Technologies:
+
+HTML, CSS, PHP (Frontend and Backend development)
+MySQL (Database management)
+JavaScript (To enhance interactivity and responsiveness)
+Session Management (For secure login and user authentication)
+</p>
+    </div>
+    <div class="hero-image" >
+        <img src="webpage.png" alt="Greta Mae Evans" class="greta-image">
+    </div>
+</section>
+
+</main>
+
+<main>
+    <section class="hero">
+    <div class="hero-content">
+        <h1>Project Overview</h1>
+        <p>Overall Project Summary
+            As a dedicated Computer Science Engineering student, I have undertaken diverse projects that showcase my skills in software development and data analysis. One of my significant projects involved a cardiovascular analysis focused on enhancing the effectiveness of rotational atherectomy angioplasty. Utilizing deep learning algorithms such as ResNet18 and AlexNet, I aimed to improve the precision of medical imaging. By leveraging TensorFlow and Keras, I developed models for predictive analytics, ultimately optimizing patient outcomes and assisting healthcare professionals in making informed decisions.
+            
+            In addition to my work in healthcare, I successfully developed a 6-page web application aimed at streamlining the organization of college events. This application features user-friendly login and registration functionalities, built using HTML, CSS, and PHP for a seamless user experience. I implemented MySQL for efficient database management, ensuring secure handling of user data and event information. These projects reflect my commitment to leveraging technology for real-world applications and my ability to integrate complex systems effectively. I am continuously seeking opportunities to expand my knowledge and skills in the fields of data science and software development.
+        </p>
+        <a href="https://drive.google.com/drive/u/4/my-drive" class="portfolio-btn" >G DRIVE</a>
+    </div>
+    <div class="hero-image" >
+        <img src="greta-image3.png" alt="Greta Mae Evans" class="greta-image">
+    </div>
+</section>
+
+</main>
+    </center>
+    </body>
+    </body>
+    </html>
